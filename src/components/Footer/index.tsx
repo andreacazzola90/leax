@@ -217,12 +217,12 @@ const Footer = () => {
             <p className="text-center text-base text-body-color dark:text-white">
               Template by{" "}
               <a
-                href="http://uideck.com"
+                href="https://www.linkedin.com/in/andreacazzola/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary"
               >
-                UIdeck
+                Cazzola Andrea
               </a>{" "}
               and{" "}
               <a
