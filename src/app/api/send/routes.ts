@@ -10,7 +10,7 @@ export async function POST() {
       from: 'Acme <onboarding@resend.dev>',
       to: ['andreacazzola90@gmail.com'],
       subject: 'Hello world',
-      react: EmailTemplate({ firstName: 'John' }),
+      react: await EmailTemplate({ firstName: 'John' }),
     });
 
     if (error) {
