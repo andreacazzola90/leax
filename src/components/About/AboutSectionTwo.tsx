@@ -1,4 +1,12 @@
+"use client"
 import Image from "next/image";
+
+
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+
 
 const AboutSectionTwo = () => {
   return (
@@ -7,21 +15,39 @@ const AboutSectionTwo = () => {
         <div className="-mx-4 flex flex-wrap items-center">
           <div className="w-full px-4 lg:w-1/2">
             <div
-              className="relative mx-auto mb-12 aspect-[25/24] max-w-[500px] text-center lg:m-0"
+              className="relative mx-auto mb-12 aspect-[25/24] max-w-[500px] text-center lg:m-0 flex items-center justify-center"
               data-wow-delay=".15s"
             >
-              <Image
-                src="/images/about/about-image-2.svg"
-                alt="about image"
-                fill
-                className="drop-shadow-three dark:hidden dark:drop-shadow-none"
-              />
-              <Image
-                src="/images/about/about-image-2-dark.svg"
-                alt="about image"
-                fill
-                className="hidden drop-shadow-three dark:block dark:drop-shadow-none"
-              />
+
+              <Swiper
+                slidesPerView={1}
+                direction="horizontal"
+                modules={[Navigation,Autoplay]}
+                spaceBetween={0}
+                autoplay
+                navigation
+              >
+                <SwiperSlide><Image
+                  src="/images/VIDEOISPEZIONE_2.png"
+                  alt="about image"
+                  width={600} height={600}
+                  className="hidden drop-shadow-three dark:block dark:drop-shadow-none"
+                /> </SwiperSlide>
+                <SwiperSlide><Image
+                  src="/images/VIDEOISPEZIONE_3.png"
+                  alt="about image"
+                  width={600} height={600}
+                  className="hidden drop-shadow-three dark:block dark:drop-shadow-none"
+                /> </SwiperSlide>
+                <SwiperSlide><Image
+                  src="/images/VIDEOISPEZIONE_4.png"
+                  alt="about image"
+                  width={600} height={600}
+                  className="hidden drop-shadow-three dark:block dark:drop-shadow-none"
+                /> </SwiperSlide>
+
+               
+              </Swiper>
             </div>
           </div>
           <div className="w-full px-4 lg:w-1/2">
@@ -31,8 +57,10 @@ const AboutSectionTwo = () => {
                   Bug free code
                 </h3>
                 <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Utilizziamo tecnologie all'
+                  avanguardia per il
+                  monitoraggio in tempo reale e la gestione
+                  delle perdite.
                 </p>
               </div>
               <div className="mb-9">
@@ -40,19 +68,14 @@ const AboutSectionTwo = () => {
                   Premier support
                 </h3>
                 <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt.
+                  Ci occupiamo di collaudi di
+                  nuove condotte nonché di manutenzione
+                  programmata e valutazioni dettagliate dello
+                  status delle tubazioni, garantendo un
+                  servizio completo end to end.
                 </p>
               </div>
-              <div className="mb-1">
-                <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Next.js
-                </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt
-                  consectetur adipiscing elit setim.
-                </p>
-              </div>
+
             </div>
           </div>
         </div>

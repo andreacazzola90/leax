@@ -13,8 +13,14 @@ const Video = () => {
     <section className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="We are ready to help"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="Chi siamo"
+          paragraph="LEAX è un’azienda di servizi specializzata nella ricerca perdite
+e nel risanamento di reti private. Ci affianchiamo al cliente
+per offrire una consulenza su problematiche verticali al fine
+di valutare insieme varie casistiche di risoluzione.
+Professionalità, affidabilità ed innovazione sono i nostri punti
+di forza. Operiamo in tutta Italia grazie ad una rete solida di
+partner storici."
           center
           mb="80px"
         />

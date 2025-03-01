@@ -1,5 +1,6 @@
 import AboutSectionOne from "@/components/About/AboutSectionOne";
 import AboutSectionTwo from "@/components/About/AboutSectionTwo";
+import Timeline from "@/components/About/Timeline";
 import Blog from "@/components/Blog";
 import Brands from "@/components/Brands";
 import ScrollUp from "@/components/Common/ScrollUp";
@@ -17,19 +18,25 @@ export const metadata: Metadata = {
   // other metadata
 };
 
+import React from 'react';
+
 export default function Home() {
   return (
     <>
       <ScrollUp />
       <Hero />
-      <Features />
       <Video />
-      <Brands />
-      <AboutSectionOne />
       <AboutSectionTwo />
+      <Timeline />
+      
+      {/* <Features /> */}
+      
+      {/* <Brands /> */}
+      {/* <AboutSectionOne /> */}
+      
       <Testimonials />
-      <Pricing />
-      <Blog />
+      {/* <Pricing /> */}
+      {/* <Blog /> */}
       <Contact />
     </>
   );

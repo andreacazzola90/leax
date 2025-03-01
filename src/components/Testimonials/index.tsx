@@ -1,6 +1,15 @@
+
+"use client"
 import { Testimonial } from "@/types/testimonial";
 import SectionTitle from "../Common/SectionTitle";
 import SingleTestimonial from "./SingleTestimonial";
+
+import Image from "next/image";
+
+
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const testimonialData: Testimonial[] = [
   {
@@ -37,17 +46,101 @@ const Testimonials = () => {
     <section className="dark:bg-bg-color-dark bg-gray-light relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="What Our Users Says"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="Sounding acustivo"
+          paragraph="Vengono impiegati strumenti elettro-acustici per individuare il rumore provocato da una perdita di acqua o gas in un impianto in pressione. Gli strumenti permettono la localizzazione puntuale della perdita."
           center
         />
 
-        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+
+        {/* <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
           {testimonialData.map((testimonial) => (
             <SingleTestimonial key={testimonial.id} testimonial={testimonial} />
           ))}
-        </div>
+        </div> */}
+
+
+        <Swiper
+          slidesPerView={3}
+
+          direction="horizontal"
+          modules={[Navigation, Autoplay]}
+          spaceBetween={30}
+          autoplay
+          navigation
+        >
+          <SwiperSlide><Image
+            src="/images/VIDEOISPEZIONE_2.png"
+            alt="about image"
+            width={600} height={600}
+            className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
+          /> </SwiperSlide>
+          <SwiperSlide><Image
+            src="/images/VIDEOISPEZIONE_3.png"
+            alt="about image"
+            width={600} height={600}
+            className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
+          /> </SwiperSlide>
+          <SwiperSlide><Image
+            src="/images/VIDEOISPEZIONE_4.png"
+            alt="about image"
+            width={600} height={600}
+            className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
+          /> </SwiperSlide>
+          <SwiperSlide><Image
+            src="/images/VIDEOISPEZIONE_2.png"
+            alt="about image"
+            width={600} height={600}
+            className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
+          /> </SwiperSlide>
+          <SwiperSlide><Image
+            src="/images/VIDEOISPEZIONE_3.png"
+            alt="about image"
+            width={600} height={600}
+            className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
+          /> </SwiperSlide>
+          <SwiperSlide><Image
+            src="/images/VIDEOISPEZIONE_4.png"
+            alt="about image"
+            width={600} height={600}
+            className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
+          /> </SwiperSlide>
+          <SwiperSlide><Image
+            src="/images/VIDEOISPEZIONE_2.png"
+            alt="about image"
+            width={600} height={600}
+            className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
+          /> </SwiperSlide>
+          <SwiperSlide><Image
+            src="/images/VIDEOISPEZIONE_3.png"
+            alt="about image"
+            width={600} height={600}
+            className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
+          /> </SwiperSlide>
+          <SwiperSlide><Image
+            src="/images/VIDEOISPEZIONE_4.png"
+            alt="about image"
+            width={600} height={600}
+            className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
+          /> </SwiperSlide>
+
+
+        </Swiper>
+
+
+        <p>Gli strumenti elettro-acustici utilizzati sono:</p>
+        <ul>
+          <li>Asta acustica elettronica</li>
+          <li>Geofono</li>
+          <li>Correlatore</li>
+          <li>Noise logger</li>
+          </ul>
+          <p>Questi strumenti vengono applicati in reti interrate, come reti antincendio o di distribuzione interna, per l'individuazione di perdite occulte anche di minima entità.
+          </p>
       </div>
+
+
+
+
       <div className="absolute right-0 top-5 z-[-1]">
         <svg
           width="238"
