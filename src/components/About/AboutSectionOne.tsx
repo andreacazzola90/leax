@@ -24,8 +24,8 @@ const AboutSectionOne = () => {
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
               <SectionTitle
-                title="Crafted for Startup, SaaS and Business Sites."
-                paragraph="The main ‘thrust’ is to focus on educating attendees on how to best protect highly vulnerable business applications with interactive panel discussions and roundtables."
+                title="Gli strumenti elettro-acustici utilizzati sono:"
+                paragraph=""
                 mb="44px"
               />
 
@@ -35,34 +35,33 @@ const AboutSectionOne = () => {
               >
                 <div className="mx-[-12px] flex flex-wrap">
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Premium quality" />
-                    <List text="Tailwind CSS" />
-                    <List text="Use for lifetime" />
+                    <List text="Asta acustica elettronica" />
+                    <List text="Geofono" />
                   </div>
-
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Next.js" />
-                    <List text="Rich documentation" />
-                    <List text="Developer friendly" />
+                    <List text="Correlatore" />
+                    <List text="Noise logger" />
                   </div>
                 </div>
               </div>
+              <SectionTitle
+                title=""
+                paragraph="Questi strumenti vengono applicati in reti interrate, come reti antincendio o di distribuzione interna, per l'individuazione di perdite occulte anche di minima entità."
+                mb="44px"
+              />
             </div>
 
             <div className="w-full px-4 lg:w-1/2">
-              <div className="relative mx-auto aspect-[25/24] max-w-[500px] lg:mr-0">
+              <div className="relative mx-auto aspect-[25/24] max-w-[500px] lg:mr-0 group overflow-hidden rounded-md">
                 <Image
-                  src="/images/about/about-image.svg"
+                  src="/images/strumneti-elettro-acustici.jpg"
                   alt="about-image"
                   fill
-                  className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
+                  className="mx-auto inset-shadow-indigo-500
+
+ rounded-md max-w-full drop-shadow-three dark:drop-shadow-none lg:mr-0"
                 />
-                <Image
-                  src="/images/about/about-image-dark.svg"
-                  alt="about-image"
-                  fill
-                  className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
-                />
+                <div className={`absolute inset-0 bg-blue-500 opacity-75 group-hover:opacity-0 transition-opacity duration-300 mix-blend-multiply`} />
               </div>
             </div>
           </div>

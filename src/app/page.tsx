@@ -1,6 +1,9 @@
 import AboutSectionOne from "@/components/About/AboutSectionOne";
 import AboutSectionTwo from "@/components/About/AboutSectionTwo";
+import Process from "@/components/About/Process";
+import ProcessLeax from "@/components/About/ProcessLeax";
 import Timeline from "@/components/About/Timeline";
+import WhoWeAre from "@/components/About/WhoWeAre";
 import Blog from "@/components/Blog";
 import Brands from "@/components/Brands";
 import ScrollUp from "@/components/Common/ScrollUp";
@@ -18,7 +21,6 @@ export const metadata: Metadata = {
   // other metadata
 };
 
-import React from 'react';
 
 export default function Home() {
   return (
@@ -27,14 +29,19 @@ export default function Home() {
       <Hero />
       <Video />
       <AboutSectionTwo />
+      <WhoWeAre />
+      <ProcessLeax />
+
       <Timeline />
       
       {/* <Features /> */}
       
       {/* <Brands /> */}
-      {/* <AboutSectionOne /> */}
       
       <Testimonials />
+      <AboutSectionOne />
+      
+      
       {/* <Pricing /> */}
       {/* <Blog /> */}
       <Contact />

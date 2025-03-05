@@ -11,6 +11,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import MotionWrapper from "../animations/MotionWrapper";
+
+const animations = {
+  title: {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.4, } },
+  }
+}
 
 const Timeline = () => {
   return (
@@ -30,13 +38,18 @@ const Timeline = () => {
                   clipRule="evenodd" />
               </svg>
             </div>
-            <div className="timeline-start mb-10 md:text-end">
-              <div className="text-lg font-black">RICERCA PERDITE IDRICHE</div>
+            
+            <div className="timeline-start mb-10 md:text-end text-body-color">
+            <MotionWrapper variants={animations.title} >
+              <div className="text-lg text-black dark:text-white">RICERCA PERDITE IDRICHE</div>
               Ricerca perdite di acqua nelle reti
               antincendio, di teleriscaldamento e di
               distribuzione interna degli stabilimenti.
+              </MotionWrapper>
             </div>
+            
             <hr />
+            
           </li>
           <li>
             <hr />
@@ -52,11 +65,13 @@ const Timeline = () => {
                   clipRule="evenodd" />
               </svg>
             </div>
-            <div className="timeline-end md:mb-10">
-              <div className="text-lg font-black">COLLAUDO TUBAZIONI</div>
+            <div className="timeline-end md:mb-10 text-body-color">
+            <MotionWrapper variants={animations.title} >
+              <div className="text-lg text-black dark:text-white">COLLAUDO TUBAZIONI</div>
               Collaudo tubazioni dalla prova in
               pressione iniziale fino al buon esito in
               ottica end to end.
+              </MotionWrapper>
             </div>
             <hr />
           </li>
@@ -74,11 +89,13 @@ const Timeline = () => {
                   clipRule="evenodd" />
               </svg>
             </div>
-            <div className="timeline-start mb-10 md:text-end">
-              <div className="text-lg font-black">RICERCA PERDITE GAS</div>
+            <div className="timeline-start mb-10 text-body-color md:text-end">
+            <MotionWrapper variants={animations.title} >
+              <div className="text-lg text-black dark:text-white">RICERCA PERDITE GAS</div>
               Ricerca perdite di gas tecnici nelle reti
               come azoto, aria compressa, ossigeno,
               argon, idrogeno ed altri.
+              </MotionWrapper>
             </div>
             <hr />
           </li>
@@ -96,10 +113,12 @@ const Timeline = () => {
                   clipRule="evenodd" />
               </svg>
             </div>
-            <div className="timeline-end md:mb-10">
-              <div className="text-lg font-black">PROVE DI TENUTA VASCHE</div>
+            <div className="timeline-end md:mb-10 text-body-color">
+            <MotionWrapper variants={animations.title} >
+              <div className="text-lg text-black dark:text-white">PROVE DI TENUTA VASCHE</div>
               Test per verificare integrità e assenza
               di perdite in vasche, serbatoi, cisterne.
+              </MotionWrapper>
             </div>
             <hr />
           </li>
@@ -117,11 +136,13 @@ const Timeline = () => {
                   clipRule="evenodd" />
               </svg>
             </div>
-            <div className="timeline-start mb-10 md:text-end">
-              <div className="text-lg font-black">VIDEOISPEZIONI</div>
+            <div className="timeline-start mb-10 text-body-color md:text-end">
+            <MotionWrapper variants={animations.title} >
+              <div className="text-lg text-black dark:text-white">VIDEOISPEZIONI</div>
               Ispezione visiva di tubazioni, condotte
               pozzi, canali e altri sistemi di raccolta e
               trasporto di liquidi o gas.
+              </MotionWrapper>
             </div>
             <hr />
           </li>
@@ -139,10 +160,12 @@ const Timeline = () => {
                   clipRule="evenodd" />
               </svg>
             </div>
-            <div className="timeline-end md:mb-10">
-              <div className="text-lg font-black">RISANAMENTO TUBAZIONI</div>
+            <div className="timeline-end md:mb-10 text-body-color">
+            <MotionWrapper variants={animations.title} >
+              <div className="text-lg text-black dark:text-white">RISANAMENTO TUBAZIONI</div>
               Risanamento no dig tramite relining
               interno con resine apposite.
+              </MotionWrapper>
             </div>
             <hr />
           </li>
@@ -160,11 +183,13 @@ const Timeline = () => {
                   clipRule="evenodd" />
               </svg>
             </div>
-            <div className="timeline-start mb-10 md:text-end">
-              <div className="text-lg font-black">MANUTENZIONE</div>
+            <div className="timeline-start mb-10 text-body-color md:text-end">
+            <MotionWrapper variants={animations.title} >
+              <div className="text-lg text-black dark:text-white">MANUTENZIONE</div>
               Contratti di manutenzione ordinaria per il
               mantenimento degli asset aziendali
               dopo il primo risanamento.
+              </MotionWrapper>
             </div>
           </li>
         </ul>

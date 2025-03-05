@@ -1,137 +1,112 @@
-
 "use client"
-import { Testimonial } from "@/types/testimonial";
-import SectionTitle from "../Common/SectionTitle";
-import SingleTestimonial from "./SingleTestimonial";
-
 import Image from "next/image";
 
 
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import MotionWrapper from "../animations/MotionWrapper";
 
-const testimonialData: Testimonial[] = [
-  {
-    id: 1,
-    name: "Musharof Chy",
-    designation: "Founder @TailGrids",
-    content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
-    image: "/images/testimonials/auth-01.png",
-    star: 5,
+const animations = {
+  title1: {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.4, } },
   },
-  {
-    id: 2,
-    name: "Devid Weilium",
-    designation: "Founder @UIdeck",
-    content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
-    image: "/images/testimonials/auth-02.png",
-    star: 5,
+  subTitle1: {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.8, } },
   },
-  {
-    id: 3,
-    name: "Lethium Frenci",
-    designation: "Founder @Lineicons",
-    content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
-    image: "/images/testimonials/auth-03.png",
-    star: 5,
+  title2: {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.8, } },
   },
-];
+  subTitle2: {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, delay: 1.2, } },
+  }
+}
 
-const Testimonials = () => {
+
+const WhoWeAre = () => {
   return (
     <section className="dark:bg-bg-color-dark bg-gray-light relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
-        <SectionTitle
-          title="Sounding acustivo"
-          paragraph="Vengono impiegati strumenti elettro-acustici per individuare il rumore provocato da una perdita di acqua o gas in un impianto in pressione. Gli strumenti permettono la localizzazione puntuale della perdita."
-          center
-        />
+        <div className="-mx-4 flex flex-wrap items-center">
+          <div className="w-full px-4 lg:w-1/2">
+            <div className="max-w-[470px]">
+              <div className="mb-9">
+                <MotionWrapper variants={animations.title1} >
+                  <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                    Bug free code
+                  </h3>
+                </MotionWrapper>
+                <MotionWrapper variants={animations.subTitle1} >
+                  <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
+                    Utilizziamo tecnologie all'
+                    avanguardia per il
+                    monitoraggio in tempo reale e la gestione
+                    delle perdite.
+                  </p>
+                </MotionWrapper>
+              </div>
+              <div className="mb-9">
+                <MotionWrapper variants={animations.title1} >
+                  <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                    Premier support
+                  </h3>
+                </MotionWrapper>
+                <MotionWrapper variants={animations.subTitle2} >
+                  <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
+                    Ci occupiamo di collaudi di
+                    nuove condotte nonché di manutenzione
+                    programmata e valutazioni dettagliate dello
+                    status delle tubazioni, garantendo un
+                    servizio completo end to end.
+                  </p>
+                </MotionWrapper>
+              </div>
+
+            </div>
+          </div>
+          <div className="w-full px-4 lg:w-1/2">
+            <div
+              className="relative mx-auto mb-12 aspect-[25/24] max-w-[500px] text-center lg:m-0 flex items-center justify-center"
+              data-wow-delay=".15s"
+            >
+
+              <Swiper
+                slidesPerView={1}
+                direction="horizontal"
+                modules={[Navigation, Autoplay]}
+                spaceBetween={0}
+                autoplay
+                navigation
+              >
+                <SwiperSlide><Image
+                  src="/images/VIDEOISPEZIONE_2.png"
+                  alt="about image"
+                  width={600} height={600}
+                  className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
+                /> </SwiperSlide>
+                <SwiperSlide><Image
+                  src="/images/VIDEOISPEZIONE_3.png"
+                  alt="about image"
+                  width={600} height={600}
+                  className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
+                /> </SwiperSlide>
+                <SwiperSlide><Image
+                  src="/images/VIDEOISPEZIONE_4.png"
+                  alt="about image"
+                  width={600} height={600}
+                  className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
+                /> </SwiperSlide>
 
 
-        {/* <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          {testimonialData.map((testimonial) => (
-            <SingleTestimonial key={testimonial.id} testimonial={testimonial} />
-          ))}
-        </div> */}
-
-
-        <Swiper
-          slidesPerView={3}
-
-          direction="horizontal"
-          modules={[Navigation, Autoplay]}
-          spaceBetween={30}
-          autoplay
-          navigation
-        >
-          <SwiperSlide><Image
-            src="/images/VIDEOISPEZIONE_2.png"
-            alt="about image"
-            width={600} height={600}
-            className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
-          /> </SwiperSlide>
-          <SwiperSlide><Image
-            src="/images/VIDEOISPEZIONE_3.png"
-            alt="about image"
-            width={600} height={600}
-            className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
-          /> </SwiperSlide>
-          <SwiperSlide><Image
-            src="/images/VIDEOISPEZIONE_4.png"
-            alt="about image"
-            width={600} height={600}
-            className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
-          /> </SwiperSlide>
-          <SwiperSlide><Image
-            src="/images/VIDEOISPEZIONE_2.png"
-            alt="about image"
-            width={600} height={600}
-            className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
-          /> </SwiperSlide>
-          <SwiperSlide><Image
-            src="/images/VIDEOISPEZIONE_3.png"
-            alt="about image"
-            width={600} height={600}
-            className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
-          /> </SwiperSlide>
-          <SwiperSlide><Image
-            src="/images/VIDEOISPEZIONE_4.png"
-            alt="about image"
-            width={600} height={600}
-            className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
-          /> </SwiperSlide>
-          <SwiperSlide><Image
-            src="/images/VIDEOISPEZIONE_2.png"
-            alt="about image"
-            width={600} height={600}
-            className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
-          /> </SwiperSlide>
-          <SwiperSlide><Image
-            src="/images/VIDEOISPEZIONE_3.png"
-            alt="about image"
-            width={600} height={600}
-            className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
-          /> </SwiperSlide>
-          <SwiperSlide><Image
-            src="/images/VIDEOISPEZIONE_4.png"
-            alt="about image"
-            width={600} height={600}
-            className="hidden drop-shadow-three dark:block dark:drop-shadow-none rounded-md"
-          /> </SwiperSlide>
-
-
-        </Swiper>
-
-
+              </Swiper>
+            </div>
+          </div>
+        </div>
       </div>
-
-
-
-
       <div className="absolute right-0 top-5 z-[-1]">
         <svg
           width="238"
@@ -264,4 +239,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default WhoWeAre;
